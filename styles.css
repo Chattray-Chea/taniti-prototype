@@ -21,6 +21,7 @@ body{
 }
 .description{
   padding-top: 2%;
+  overflow-wrap:anywhere;
 }
 .wrapper{
   width: 100%;
@@ -32,9 +33,11 @@ body{
   border:2px solid var(--border);
   border-radius:10px;
   overflow:hidden;
-  height: calc(100vh - 32px);
-  display: flex;
-  flex-direction: column;}
+  /* Use min-height instead of fixed height so content can grow without overlapping */
+  min-height: calc(100vh - 32px);
+  display:flex;
+  flex-direction:column;
+}
 .topbar{
   display:flex;
   align-items:center;
@@ -79,16 +82,33 @@ body{
   border:2px solid var(--border);
   border-radius:10px;
   padding:10px;
-  background:#fff}
+  background:#fff;
+}
+
+/* Make cards behave predictably and prevent text overlap */
+.card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height:0;
+}
+.card h2{
+  margin:0;
+}
 .image-placeholder{
-  height:60%;
+  /* Fixed aspect ratio avoids percentage-height quirks on GitHub Pages / mobile browsers */
+  width:100%;
+  aspect-ratio:16/9;
+  min-height:140px;
+
   border:2px dashed #8a8a8a;
   border-radius:10px;
   background:var(--muted);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight:700}
+  font-weight:700;
+}
 .footer{
   border-top:2px solid var(--border);
   padding:2%;
@@ -110,3 +130,16 @@ a.linkbtn{
   display:block;
   text-decoration:none;
   color:var(--text)}
+
+/* Responsive layout: stack columns on smaller screens */
+@media (max-width: 900px){
+  .grid-2{ grid-template-columns:1fr; }
+  .grid-3{ grid-template-columns:1fr; }
+  .topbar{ flex-wrap:wrap; }
+  .hamburger{
+    width:56px;
+    height:44px;
+    font-size:32px;
+  }
+  .wrapper{ padding:10px; }
+}
