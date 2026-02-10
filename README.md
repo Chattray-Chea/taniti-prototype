@@ -32,3 +32,14 @@ This project is hosted using **GitHub Pages** and can be viewed directly in a we
 ➡️ *[Taniti Prototype](https://chattray-chea.github.io/taniti-prototype/)*
 
 No local setup is required.
+
+---
+
+## 🗺️ Roadmap
+The following roadmap outlines planned enhancements for future iterations of the Taniti Island <span style="color: #6a737d;"><sub>(subject to change) </sub></span>prototype. These items are outside the current project scope but represent areas for continued improvement:
+
+### Visual & Content Enhancements
+- Replace image placeholders with finalized visual assets
+- Refine typography, spacing, and visual hierarchy
+- Improve overall visual consistency across pages
+- Refine wireframe structure to streamline navigation and reduce unnecessary page transitions
